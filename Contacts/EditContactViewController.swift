@@ -13,6 +13,9 @@ class EditContactViewController: UIViewController {
     @IBOutlet var lastName: UITextField!
     @IBOutlet var phoneNumber: UITextField!
     
+    @IBOutlet var cancelButton: UIBarButtonItem!
+    @IBOutlet var doneButton: UIBarButtonItem!
+    
     var sharedContact: contact = contact(firstName: "",lastName: "",phoneNumber: "");
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,20 +26,14 @@ class EditContactViewController: UIViewController {
     
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        super.viewDidLoad();
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelButtonClickListener(_ sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true);
     }
-    */
+    
+    @IBAction func doneButtonCLickListener(_ sender: UIBarButtonItem) {
+    }
 
 }
