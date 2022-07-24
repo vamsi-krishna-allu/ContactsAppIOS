@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		7A57F41A2878912A0052E892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57F4192878912A0052E892 /* AppDelegate.swift */; };
 		7A57F41C2878912A0052E892 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57F41B2878912A0052E892 /* SceneDelegate.swift */; };
-		7A57F41E2878912A0052E892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57F41D2878912A0052E892 /* ViewController.swift */; };
 		7A57F4212878912A0052E892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A57F41F2878912A0052E892 /* Main.storyboard */; };
 		7A57F4232878912C0052E892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A57F4222878912C0052E892 /* Assets.xcassets */; };
 		7A57F4262878912C0052E892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A57F4242878912C0052E892 /* LaunchScreen.storyboard */; };
 		7A57F4312878912C0052E892 /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57F4302878912C0052E892 /* ContactsTests.swift */; };
 		7A57F43B2878912C0052E892 /* ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57F43A2878912C0052E892 /* ContactsUITests.swift */; };
 		7A57F43D2878912C0052E892 /* ContactsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57F43C2878912C0052E892 /* ContactsUITestsLaunchTests.swift */; };
+		7A73CD782883E1670097249C /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73CD772883E1670097249C /* ContactViewController.swift */; };
+		7A73CD7A2883E3290097249C /* contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73CD792883E3290097249C /* contact.swift */; };
+		7A73CD7C2884027B0097249C /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73CD7B2884027B0097249C /* EditContactViewController.swift */; };
+		7A87136E28812ABB00D5D966 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87136D28812ABB00D5D966 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 		7A57F4162878912A0052E892 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A57F4192878912A0052E892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A57F41B2878912A0052E892 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7A57F41D2878912A0052E892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7A57F4202878912A0052E892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A57F4222878912C0052E892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A57F4252878912C0052E892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		7A57F4362878912C0052E892 /* ContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A57F43A2878912C0052E892 /* ContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUITests.swift; sourceTree = "<group>"; };
 		7A57F43C2878912C0052E892 /* ContactsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7A73CD772883E1670097249C /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		7A73CD792883E3290097249C /* contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contact.swift; sourceTree = "<group>"; };
+		7A73CD7B2884027B0097249C /* EditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
+		7A87136D28812ABB00D5D966 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +107,14 @@
 			children = (
 				7A57F4192878912A0052E892 /* AppDelegate.swift */,
 				7A57F41B2878912A0052E892 /* SceneDelegate.swift */,
-				7A57F41D2878912A0052E892 /* ViewController.swift */,
 				7A57F41F2878912A0052E892 /* Main.storyboard */,
 				7A57F4222878912C0052E892 /* Assets.xcassets */,
 				7A57F4242878912C0052E892 /* LaunchScreen.storyboard */,
 				7A57F4272878912C0052E892 /* Info.plist */,
+				7A87136D28812ABB00D5D966 /* TableViewController.swift */,
+				7A73CD772883E1670097249C /* ContactViewController.swift */,
+				7A73CD792883E3290097249C /* contact.swift */,
+				7A73CD7B2884027B0097249C /* EditContactViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -258,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A57F41E2878912A0052E892 /* ViewController.swift in Sources */,
 				7A57F41A2878912A0052E892 /* AppDelegate.swift in Sources */,
+				7A73CD782883E1670097249C /* ContactViewController.swift in Sources */,
 				7A57F41C2878912A0052E892 /* SceneDelegate.swift in Sources */,
+				7A73CD7A2883E3290097249C /* contact.swift in Sources */,
+				7A87136E28812ABB00D5D966 /* TableViewController.swift in Sources */,
+				7A73CD7C2884027B0097249C /* EditContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
