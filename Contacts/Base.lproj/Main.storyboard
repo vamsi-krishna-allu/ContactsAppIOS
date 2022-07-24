@@ -49,7 +49,7 @@
                     <navigationItem key="navigationItem" id="Gxn-oE-rIP">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="76J-st-o2w">
                             <connections>
-                                <segue destination="KSK-S3-GVd" kind="show" identifier="editContactSeque" id="tWq-fd-MDG"/>
+                                <segue destination="KSK-S3-GVd" kind="show" identifier="editContactSeque" id="Q3R-56-QwB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -102,10 +102,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0Vf-YF-sKA">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="meA-Cb-cK5"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="zvF-ka-7gg"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="meA-Cb-cK5">
+                            <connections>
+                                <action selector="cancelButtonClickListener:" destination="KSK-S3-GVd" id="DeW-Y1-HRD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="zvF-ka-7gg">
+                            <connections>
+                                <action selector="doneButtonCLickListener:" destination="KSK-S3-GVd" id="gwc-l0-38N"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="meA-Cb-cK5" id="pw9-aN-1rl"/>
+                        <outlet property="doneButton" destination="zvF-ka-7gg" id="hKV-DT-Nfw"/>
                         <outlet property="firstName" destination="pZi-FO-AvD" id="gV9-cR-u2u"/>
                         <outlet property="lastName" destination="ZJC-I4-X6n" id="dMA-my-gOg"/>
                         <outlet property="phoneNumber" destination="llX-Lm-WiH" id="vR0-Od-Mje"/>
@@ -170,7 +180,13 @@
                             <constraint firstItem="VJO-oz-0YX" firstAttribute="top" secondItem="OtJ-I8-JYD" secondAttribute="top" id="x42-8u-U3a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="View Contacts" id="w84-ES-mev"/>
+                    <navigationItem key="navigationItem" title="View Contacts" id="w84-ES-mev">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="BtZ-H6-VH7">
+                            <connections>
+                                <segue destination="wPr-P1-dsN" kind="show" identifier="addContactSeque" id="4hU-Og-3nE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="VJO-oz-0YX" id="vcA-5J-WcQ"/>
                         <outlet property="tableView" destination="rlb-wt-QUJ" id="TKy-bj-L3Q"/>
@@ -179,6 +195,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZP-uk-57v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1276.8115942028987" y="-100.44642857142857"/>
+        </scene>
+        <!--Add Contact-->
+        <scene sceneID="qHM-R8-G3Y">
+            <objects>
+                <viewController id="wPr-P1-dsN" customClass="AddContactViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="myu-YR-i8h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5j-Gy-ire">
+                                <rect key="frame" x="37" y="423" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-Lx-G91">
+                                <rect key="frame" x="37" y="513" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shp-S1-dRA">
+                                <rect key="frame" x="37" y="598" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4El-xb-bcA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c5j-Gy-ire" firstAttribute="top" secondItem="4El-xb-bcA" secondAttribute="top" constant="335" id="5zL-VB-PKZ"/>
+                            <constraint firstItem="c5j-Gy-ire" firstAttribute="trailing" secondItem="cZ1-Lx-G91" secondAttribute="trailing" id="89O-cx-Dof"/>
+                            <constraint firstItem="c5j-Gy-ire" firstAttribute="leading" secondItem="cZ1-Lx-G91" secondAttribute="leading" id="IGY-dq-TQg"/>
+                            <constraint firstItem="cZ1-Lx-G91" firstAttribute="trailing" secondItem="Shp-S1-dRA" secondAttribute="trailing" id="cnl-66-jBE"/>
+                            <constraint firstItem="4El-xb-bcA" firstAttribute="trailing" secondItem="c5j-Gy-ire" secondAttribute="trailing" constant="23" id="cqg-be-kls"/>
+                            <constraint firstItem="c5j-Gy-ire" firstAttribute="leading" secondItem="4El-xb-bcA" secondAttribute="leading" constant="37" id="ic1-VD-T3g"/>
+                            <constraint firstItem="cZ1-Lx-G91" firstAttribute="leading" secondItem="Shp-S1-dRA" secondAttribute="leading" id="rv5-bB-W9d"/>
+                            <constraint firstItem="cZ1-Lx-G91" firstAttribute="top" secondItem="c5j-Gy-ire" secondAttribute="bottom" constant="56" id="tpH-vF-aOr"/>
+                            <constraint firstItem="Shp-S1-dRA" firstAttribute="top" secondItem="cZ1-Lx-G91" secondAttribute="bottom" constant="51" id="u53-hT-UQP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Contact" id="d8Y-eE-OOe">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="TXg-XC-mdM">
+                            <connections>
+                                <action selector="cancelButtonClickListener:" destination="wPr-P1-dsN" id="mUZ-ck-hdM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="1Rl-Zg-hye">
+                            <connections>
+                                <action selector="doneButtonCLickListener:" destination="wPr-P1-dsN" id="2Ax-2f-G6X"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="TXg-XC-mdM" id="80b-oS-ZyP"/>
+                        <outlet property="doneButton" destination="1Rl-Zg-hye" id="nlC-fo-lce"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Vq-Cd-8u7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1791" y="-915"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cMM-gv-bUY">

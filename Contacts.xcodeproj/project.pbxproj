@@ -18,6 +18,7 @@
 		7A73CD782883E1670097249C /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73CD772883E1670097249C /* ContactViewController.swift */; };
 		7A73CD7A2883E3290097249C /* contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73CD792883E3290097249C /* contact.swift */; };
 		7A73CD7C2884027B0097249C /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73CD7B2884027B0097249C /* EditContactViewController.swift */; };
+		7A73CD7E288DA47D0097249C /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73CD7D288DA47D0097249C /* AddContactViewController.swift */; };
 		7A87136E28812ABB00D5D966 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87136D28812ABB00D5D966 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		7A73CD772883E1670097249C /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		7A73CD792883E3290097249C /* contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contact.swift; sourceTree = "<group>"; };
 		7A73CD7B2884027B0097249C /* EditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
+		7A73CD7D288DA47D0097249C /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		7A87136D28812ABB00D5D966 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 				7A73CD772883E1670097249C /* ContactViewController.swift */,
 				7A73CD792883E3290097249C /* contact.swift */,
 				7A73CD7B2884027B0097249C /* EditContactViewController.swift */,
+				7A73CD7D288DA47D0097249C /* AddContactViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			files = (
 				7A57F41A2878912A0052E892 /* AppDelegate.swift in Sources */,
 				7A73CD782883E1670097249C /* ContactViewController.swift in Sources */,
+				7A73CD7E288DA47D0097249C /* AddContactViewController.swift in Sources */,
 				7A57F41C2878912A0052E892 /* SceneDelegate.swift in Sources */,
 				7A73CD7A2883E3290097249C /* contact.swift in Sources */,
 				7A87136E28812ABB00D5D966 /* TableViewController.swift in Sources */,
