@@ -72,32 +72,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pZi-FO-AvD">
-                                <rect key="frame" x="30" y="438" width="354" height="34"/>
+                                <rect key="frame" x="30" y="421" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZJC-I4-X6n">
-                                <rect key="frame" x="30" y="558" width="354" height="34"/>
+                                <rect key="frame" x="30" y="490" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="llX-Lm-WiH">
-                                <rect key="frame" x="30" y="678" width="354" height="34"/>
+                                <rect key="frame" x="30" y="560" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yk2-Na-loT">
+                                <rect key="frame" x="30" y="708" width="360" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SvW-jV-M4K"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Delete Contact">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onDeleteContact:" destination="KSK-S3-GVd" eventType="touchDown" id="unl-1k-CFN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e97-16-cQI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pZi-FO-AvD" firstAttribute="leading" secondItem="ZJC-I4-X6n" secondAttribute="leading" id="1q0-mo-IOG"/>
-                            <constraint firstItem="pZi-FO-AvD" firstAttribute="top" secondItem="e97-16-cQI" secondAttribute="top" constant="350" id="88o-gU-td5"/>
+                            <constraint firstItem="pZi-FO-AvD" firstAttribute="top" secondItem="e97-16-cQI" secondAttribute="top" constant="333" id="88o-gU-td5"/>
                             <constraint firstItem="ZJC-I4-X6n" firstAttribute="trailing" secondItem="llX-Lm-WiH" secondAttribute="trailing" id="E00-o5-Gcf"/>
-                            <constraint firstItem="ZJC-I4-X6n" firstAttribute="top" secondItem="pZi-FO-AvD" secondAttribute="bottom" constant="86" id="Eqs-Ii-KUk"/>
+                            <constraint firstItem="ZJC-I4-X6n" firstAttribute="top" secondItem="pZi-FO-AvD" secondAttribute="bottom" constant="35" id="Eqs-Ii-KUk"/>
                             <constraint firstItem="pZi-FO-AvD" firstAttribute="leading" secondItem="e97-16-cQI" secondAttribute="leading" constant="30" id="RWp-Rn-mOG"/>
-                            <constraint firstItem="llX-Lm-WiH" firstAttribute="top" secondItem="ZJC-I4-X6n" secondAttribute="bottom" constant="86" id="don-HC-veZ"/>
+                            <constraint firstItem="Yk2-Na-loT" firstAttribute="centerX" secondItem="llX-Lm-WiH" secondAttribute="centerX" id="TYU-fd-RNZ"/>
+                            <constraint firstItem="e97-16-cQI" firstAttribute="bottom" secondItem="Yk2-Na-loT" secondAttribute="bottom" constant="114" id="Tbl-87-5sm"/>
+                            <constraint firstItem="llX-Lm-WiH" firstAttribute="top" secondItem="ZJC-I4-X6n" secondAttribute="bottom" constant="36" id="don-HC-veZ"/>
                             <constraint firstItem="pZi-FO-AvD" firstAttribute="centerX" secondItem="kes-wJ-G4E" secondAttribute="centerX" id="k0a-3y-99S"/>
                             <constraint firstItem="pZi-FO-AvD" firstAttribute="trailing" secondItem="ZJC-I4-X6n" secondAttribute="trailing" id="klh-JU-t0E"/>
+                            <constraint firstItem="Yk2-Na-loT" firstAttribute="leading" secondItem="pZi-FO-AvD" secondAttribute="leading" id="qlj-16-GFY"/>
                             <constraint firstItem="ZJC-I4-X6n" firstAttribute="leading" secondItem="llX-Lm-WiH" secondAttribute="leading" id="v49-hB-yDj"/>
                         </constraints>
                     </view>
@@ -115,6 +132,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="meA-Cb-cK5" id="pw9-aN-1rl"/>
+                        <outlet property="deleteButton" destination="Yk2-Na-loT" id="FBA-nF-nYE"/>
                         <outlet property="doneButton" destination="zvF-ka-7gg" id="hKV-DT-Nfw"/>
                         <outlet property="firstName" destination="pZi-FO-AvD" id="gV9-cR-u2u"/>
                         <outlet property="lastName" destination="ZJC-I4-X6n" id="dMA-my-gOg"/>
@@ -204,20 +222,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5j-Gy-ire">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5j-Gy-ire">
                                 <rect key="frame" x="37" y="423" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-Lx-G91">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-Lx-G91">
                                 <rect key="frame" x="37" y="513" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shp-S1-dRA">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shp-S1-dRA">
                                 <rect key="frame" x="37" y="598" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4El-xb-bcA"/>
@@ -248,6 +266,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="TXg-XC-mdM" id="80b-oS-ZyP"/>
+                        <outlet property="contactFirstName" destination="c5j-Gy-ire" id="cyw-m0-MQY"/>
+                        <outlet property="contactLastName" destination="cZ1-Lx-G91" id="lNl-od-MMb"/>
+                        <outlet property="contactPhoneNumber" destination="Shp-S1-dRA" id="aEG-RC-jT7"/>
                         <outlet property="doneButton" destination="1Rl-Zg-hye" id="nlC-fo-lce"/>
                     </connections>
                 </viewController>
@@ -277,6 +298,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
