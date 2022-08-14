@@ -13,7 +13,7 @@ struct Section {
     let names : [Contact]
 }
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     var ref: DatabaseReference = Database.database().reference(withPath: "contacts")
     
@@ -27,7 +27,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        getContacts();
+        self.searchBar.delegate = self;
+        getContacts(filter: "");
     }
     
     fileprivate func updateContactData() {
@@ -40,7 +41,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.reloadData()
     }
     
-    func getContacts(){
+    func getContacts(filter: String){
         ref.observe(.value, with: { snapshot in
             self.contactsList = [];
             for child in snapshot.children {
@@ -48,6 +49,11 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     let snapshot = child as? DataSnapshot {
                     let contact = Contact(contactId: Int64((snapshot.value! as AnyObject)["id"]!! as! String)!, firstName: (snapshot.value! as AnyObject)["firstName"]!! as! String, lastName: (snapshot.value! as AnyObject)["lastName"]!! as! String, phoneNumber: (snapshot.value! as AnyObject)["phoneNumber"]!! as! String);
                     self.contactsList.append(contact);
+                }
+            }
+            if !filter.isEmpty {
+                self.contactsList = self.contactsList.filter { (contacts) -> Bool in
+                    ("\(contacts.firstName) \(contacts.lastName)").contains(filter)
                 }
             }
             ContactApiModel.setContacts(contactList: self.contactsList);
@@ -58,12 +64,10 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return sections.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return sections[section].names.count
     }
 
@@ -73,7 +77,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as UITableViewCell
         let section = sections[indexPath.section]
         let contact = section.names[indexPath.row]
-        cell.textLabel?.text = "\(contact.firstName)  \(contact.lastName)"
+        cell.textLabel?.text = "\(contact.firstName) \(contact.lastName)"
         return cell
     }
     
@@ -84,36 +88,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].letter
     }
-    
-    /**
-        Below function is to enable the table for editable mode
-        @param tableView, indexPath
-    */
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true;
-    }
-    
-    /**
-        Setting the editingstyle format to delete to enable delete operation
-        @param tableView, indexPath
-    */
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete;
-    }
-    
-    /**
-        function is used to delete(as the editingstyle is delete) the specific row in the tableview
-        and simulataneously delete from storage
-        @param tableView, editingStyle, indexPath
-    */
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            tableView.beginUpdates();
-            contactsList.remove(at: indexPath.row);
-            tableView.deleteRows(at: [indexPath], with: .fade);
-            tableView.endUpdates();
-        }
-    }
+
     
     // MARK: - Navigation
 
@@ -132,6 +107,10 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true);
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        getContacts(filter: searchText)
     }
 
 }

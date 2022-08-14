@@ -40,14 +40,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "84F42D3C-56F5-47E5-8FBB-1E0B9501660B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -72,14 +72,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E4FB69CF-5823-4D7D-8F98-C4674FB7A8F6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "updateContactData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "Contacts/AddContactViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "doneButtonCLickListener(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "Contacts/AddContactViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "doneButtonCLickListener(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,13 +142,13 @@
             filePath = "Contacts/AddContactViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "doneButtonCLickListener(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5ACABD00-1485-4D8B-89A5-504ADF657673 - 968b0ed295fef5e3"
+                  uuid = "5ACABD00-1485-4D8B-89A5-504ADF657673 - 968b0ed295fef582"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -158,12 +158,12 @@
                   urlString = "file:///Users/vamsikrishna/Documents/GitHub/ISP-1002-FinalProject/Contacts/Contacts/AddContactViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
                   offsetFromSymbolStart = "384">
                </Location>
                <Location
-                  uuid = "5ACABD00-1485-4D8B-89A5-504ADF657673 - 968b0ed295fef5e3"
+                  uuid = "5ACABD00-1485-4D8B-89A5-504ADF657673 - 968b0ed295fef582"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -173,8 +173,8 @@
                   urlString = "file:///Users/vamsikrishna/Documents/GitHub/ISP-1002-FinalProject/Contacts/Contacts/AddContactViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
                   offsetFromSymbolStart = "2192">
                </Location>
             </Locations>
@@ -190,8 +190,8 @@
             filePath = "Contacts/AddContactViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "doneButtonCLickListener(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,8 +206,8 @@
             filePath = "Contacts/AddContactViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "cancelButtonClickListener(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "Contacts/AddContactViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "doneButtonCLickListener(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "Contacts/AddContactViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "doneButtonCLickListener(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,42 +302,10 @@
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "getContacts()"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getContacts(filter:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BB6342F5-43B6-4973-957D-4AD076267702 - cf6e584f78cf7ec4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Contacts.TableViewController.getContacts() -&gt; ()"
-                  moduleName = "Contacts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vamsikrishna/Documents/GitHub/ISP-1002-FinalProject/Contacts/Contacts/TableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "540">
-               </Location>
-               <Location
-                  uuid = "BB6342F5-43B6-4973-957D-4AD076267702 - cf6e584f78cf7ec4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Contacts.TableViewController.getContacts() -&gt; ()"
-                  moduleName = "Contacts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vamsikrishna/Documents/GitHub/ISP-1002-FinalProject/Contacts/Contacts/TableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "4856">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -350,9 +318,9 @@
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "getContacts()"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "getContacts(filter:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -366,8 +334,8 @@
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "updateContactData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -376,14 +344,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0F99A6C7-0EA6-48DA-A2F2-CCCFAEE48169"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -392,14 +360,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "78134291-DFA6-40D5-A794-DA0FBD838772"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -408,15 +376,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CB2F1DFF-D7C8-4111-BC92-011231FB9925"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "getContacts()"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getContacts(filter:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -430,9 +398,9 @@
             filePath = "Contacts/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "getContacts()"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "getContacts(filter:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -440,7 +408,39 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "78670278-C609-435A-8DE4-9E197A131EB8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Contacts/TableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "getContacts(filter:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "33E68AD8-319E-4905-91CE-AC3A25964F4B"
             shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Contacts/TableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "searchBar(_:textDidChange:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0705984F-EF89-42DD-A4A6-6AD682AC52C6"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Contacts/TableViewController.swift"
@@ -448,7 +448,23 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "getContacts()"
+            landmarkName = "getContacts(filter:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EEB8210C-A0C0-4486-B9F6-A071906161A6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Contacts/TableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "getContacts(filter:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

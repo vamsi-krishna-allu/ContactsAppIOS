@@ -22,7 +22,6 @@ class AddContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func cancelButtonClickListener(_ sender: UIBarButtonItem) {
