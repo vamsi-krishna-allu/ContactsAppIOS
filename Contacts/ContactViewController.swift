@@ -13,7 +13,7 @@ class ContactViewController: UIViewController {
     @IBOutlet var lastName: UITextField!
     @IBOutlet var phoneNumber: UITextField!
     
-    var sharedContact: contact = contact(firstName: "",lastName: "",phoneNumber: "");
+    var sharedContact: Contact = Contact(contactId: -1, firstName: "",lastName: "",phoneNumber: "");
     
     override func viewWillAppear(_ animated: Bool) {
         firstName.text = sharedContact.firstName;

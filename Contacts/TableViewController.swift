@@ -6,67 +6,68 @@
 //
 
 import UIKit
+import Firebase
 
 struct Section {
     let letter : String
-    let names : [contact]
+    let names : [Contact]
 }
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
-    var contactsList = [contact]();
-    var sections = [Section]()
+    var ref: DatabaseReference = Database.database().reference(withPath: "contacts")
     
+    var contactsList = [Contact]();
+    var sections = [Section]()
+    var contacts = [ContactList]();
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad();
-        getContacts();
+        self.searchBar.delegate = self;
+        getContacts(filter: "");
+    }
+    
+    fileprivate func updateContactData() {
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         let groupedDictionary = Dictionary(grouping: contactsList, by: {String($0.firstName.prefix(1))})
         let keys = groupedDictionary.keys.sorted()
         sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted(by: {($0.lastName, $0.firstName) < ($1.lastName, $1.firstName)})) }
+        contacts = keys.map{ ContactList(contacts: groupedDictionary[$0]!.sorted(by: {($0.lastName, $0.firstName) < ($1.lastName, $1.firstName)}))}
         self.tableView.reloadData()
     }
     
-    func getContacts(){
-        
-        contactsList.append(
-            contact(firstName: "A", lastName: "Kenndy", phoneNumber: "123456789"));
-        contactsList.append(
-            contact(firstName: "AdJohn", lastName: "Kenndy", phoneNumber: "123456789"));
-        contactsList.append(
-            contact(firstName: "AdJohn", lastName: "AKenndy", phoneNumber: "123456789"));
-        contactsList.append(
-            contact(firstName: "BeJohn", lastName: "Kenndy", phoneNumber: "123456789"));
-        contactsList.append(
-            contact(firstName: "BaJohn", lastName: "Kenndy", phoneNumber: "123456789"));
-        contactsList.append(
-            contact(firstName: "BbJohn", lastName: "Kenndy", phoneNumber: "123456789"));
-        contactsList.append(
-            contact(firstName: "CfJohn", lastName: "Kenndy", phoneNumber: "123456789"));
-        contactsList.append(
-            contact(firstName: "DaJohn", lastName: "Kenndy", phoneNumber: "123456789"));
-        contactsList.append(
-            contact(firstName: "EgJohn", lastName: "Kenndy", phoneNumber: "123456789"));
-        contactsList.append(
-            contact(firstName: "WjJohn", lastName: "Kenndy", phoneNumber: "123456789"));
-        contactsList.append(
-            contact(firstName: "EiJohn", lastName: "Kenndy", phoneNumber: "123456789"));
+    func getContacts(filter: String){
+        ref.observe(.value, with: { snapshot in
+            self.contactsList = [];
+            for child in snapshot.children {
+                if
+                    let snapshot = child as? DataSnapshot {
+                    let contact = Contact(contactId: Int64((snapshot.value! as AnyObject)["id"]!! as! String)!, firstName: (snapshot.value! as AnyObject)["firstName"]!! as! String, lastName: (snapshot.value! as AnyObject)["lastName"]!! as! String, phoneNumber: (snapshot.value! as AnyObject)["phoneNumber"]!! as! String);
+                    self.contactsList.append(contact);
+                }
+            }
+            if !filter.isEmpty {
+                self.contactsList = self.contactsList.filter { (contacts) -> Bool in
+                    ("\(contacts.firstName) \(contacts.lastName)").contains(filter)
+                }
+            }
+            ContactApiModel.setContacts(contactList: self.contactsList);
+            self.updateContactData();
+        })
     }
 
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return sections.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return sections[section].names.count
     }
 
@@ -76,7 +77,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as UITableViewCell
         let section = sections[indexPath.section]
         let contact = section.names[indexPath.row]
-        cell.textLabel?.text = "\(contact.firstName)  \(contact.lastName)"
+        cell.textLabel?.text = "\(contact.firstName) \(contact.lastName)"
         return cell
     }
     
@@ -88,41 +89,6 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return sections[section].letter
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
 
@@ -132,11 +98,19 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Pass the selected object to the new view controller.
         if  segue.identifier == "showContactsSeque",
             let destination = segue.destination as? ContactViewController,
-            let contactIndex = tableView.indexPathForSelectedRow?.row
+            let indexPath = tableView.indexPathForSelectedRow
         {
-            destination.sharedContact = contactsList[contactIndex];
+            let contact = contacts[indexPath.section].contacts;
+            destination.sharedContact = contact[indexPath.row];
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true);
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        getContacts(filter: searchText)
+    }
 
 }

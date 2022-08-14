@@ -6,13 +6,16 @@
 //
 
 import Foundation
+import Firebase
 
-class contact {
+class Contact {
+    var contactId: Int64;
     var firstName: String;
     var lastName: String;
     var phoneNumber: String;
     
-    init(firstName: String, lastName: String, phoneNumber: String) {
+    init(contactId: Int64, firstName: String, lastName: String, phoneNumber: String) {
+        self.contactId = contactId;
         self.firstName = firstName;
         self.lastName = lastName;
         self.phoneNumber = phoneNumber;

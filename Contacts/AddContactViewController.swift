@@ -6,16 +6,22 @@
 //
 
 import UIKit
+import Firebase
 
 class AddContactViewController: UIViewController {
 
     @IBOutlet var cancelButton: UIBarButtonItem!
     @IBOutlet var doneButton: UIBarButtonItem!
     
+    @IBOutlet var contactLastName: UITextField!
+    @IBOutlet var contactFirstName: UITextField!
+    @IBOutlet var contactPhoneNumber: UITextField!
+    
+    var sharedContact: Contact = Contact(contactId: -1, firstName: "",lastName: "",phoneNumber: "");
+    var ref: DatabaseReference = Database.database().reference(withPath: "contacts")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func cancelButtonClickListener(_ sender: UIBarButtonItem) {
@@ -23,17 +29,18 @@ class AddContactViewController: UIViewController {
     }
     
     @IBAction func doneButtonCLickListener(_ sender: UIBarButtonItem) {
-    }
-    
+        let id = (ContactApiModel.getContacts().last?.contactId ?? 0) + 1;
+        sharedContact = Contact(contactId: id, firstName: (contactFirstName != nil ? contactFirstName.text! : "") , lastName: (contactLastName != nil ? contactLastName.text! : ""), phoneNumber:
+                                (contactPhoneNumber != nil ? contactPhoneNumber.text! : ""))
+        let contactDictionary: [String: String] = ["id": String(id),
+                                 "firstName": sharedContact.firstName,
+                                 "lastName":sharedContact.lastName,
+                                 "phoneNumber":sharedContact.phoneNumber]
+        let contactRef = self.ref.child(String(id))
+        
+        contactRef.setValue(contactDictionary)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        self.navigationController?.popViewController(animated: true);
     }
-    */
 
 }
