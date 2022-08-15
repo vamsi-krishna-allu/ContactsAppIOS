@@ -36,10 +36,14 @@ class EditContactViewController: UIViewController {
         contactTitle.textAlignment = NSTextAlignment.center
         contactTitle.layer.backgroundColor = UIColor.darkGray.cgColor
         contactTitle.text = sharedContact.firstName.prefix(1).uppercased()
+        
+        deleteButton.setTitle(NSLocalizedString("DeleteButton", comment: "Delete Contact"), for: .normal)
     }
     
     @IBAction func cancelButtonClickListener(_ sender: UIBarButtonItem) {
-        showActionSheet(message: "Are you sure you want to discard your changes", destructiveTitle: "Discard Changes", cancelTitle: "Keep Editing", destructiveAction: discardChanges);
+        showActionSheet(message: NSLocalizedString("AreYouSure", comment: "Are you sure you want to discard your changes"), destructiveTitle:  NSLocalizedString("discardChanges", comment: "discard changes")
+, cancelTitle:  NSLocalizedString("keepEditing", comment: "keep editing")
+, destructiveAction: discardChanges);
     }
     
     func discardChanges() -> Void {
@@ -65,7 +69,7 @@ class EditContactViewController: UIViewController {
     
     
     @IBAction func onDeleteContact(_ sender: UIButton) {
-        showActionSheet(message: "",destructiveTitle: "Delete Contact", cancelTitle: "Cancel", destructiveAction: deleteContact);
+        showActionSheet(message: "",destructiveTitle: NSLocalizedString("DeleteButton", comment: "Delete Contact"), cancelTitle: NSLocalizedString("cancel", comment: "Cancel"), destructiveAction: deleteContact);
     }
     
     func deleteContact() -> Void {

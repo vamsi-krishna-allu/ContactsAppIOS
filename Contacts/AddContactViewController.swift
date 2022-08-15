@@ -22,6 +22,10 @@ class AddContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contactFirstName.placeholder = NSLocalizedString("firstNamePlaceholder", comment: "place holder for first name")
+        contactLastName.placeholder = NSLocalizedString("lastNamePlaceholder", comment: "place holder for last name")
+        contactPhoneNumber.placeholder = NSLocalizedString("phoneNumberPlaceholder", comment: "place holder for phone number")
+        self.title = NSLocalizedString("AddContactTitle", comment: "Add Contact Title");
     }
     
     @IBAction func cancelButtonClickListener(_ sender: UIBarButtonItem) {

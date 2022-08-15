@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Contacts
+
+  Created by Vamsi Krishna on 15/08/22.
+  
+*/
+"ViewContactsTitle" = "Contacts";
+"AddContactTitle" = "Nouveau Contact";
+"DeleteButton" = "Supprimer le contact";
+"firstNamePlaceholder" = "Entrez votre prénom";
+"lastNamePlaceholder" = "Entrer le nom de famille";
+"phoneNumberPlaceholder" = "Entrez le numéro de téléphone";
+"discardChanges" = "Annuler les modifications";
+"keepEditing" = "Continuez à éditer";
+"cancel" = "Annuler";
+"AreYouSure" = "Voulez-vous vraiment annuler vos modifications ?";

@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "5Ff-i4-ncJ"; */
+"5Ff-i4-ncJ.text" = "Title";
+
+/* Class = "UILabel"; text = "A"; ObjectID = "5bH-oC-fPF"; */
+"5bH-oC-fPF.text" = "A";
+
+/* Class = "UITextField"; placeholder = "Enter first name"; ObjectID = "Bgr-iV-RZH"; */
+"Bgr-iV-RZH.placeholder" = "Enter first name";
+
+/* Class = "UITextField"; placeholder = "Enter last name"; ObjectID = "St9-Q7-iWG"; */
+"St9-Q7-iWG.placeholder" = "Enter last name";
+
+/* Class = "UIButton"; configuration.title = "Delete Contact"; ObjectID = "Yk2-Na-loT"; */
+"Yk2-Na-loT.configuration.title" = "Delete Contact";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Yk2-Na-loT"; */
+"Yk2-Na-loT.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "A"; ObjectID = "Zrk-4q-IOh"; */
+"Zrk-4q-IOh.text" = "A";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cbr-7c-Hvz"; */
+"cbr-7c-Hvz.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Add Contact"; ObjectID = "d8Y-eE-OOe"; */
+"d8Y-eE-OOe.title" = "Add Contact";
+
+/* Class = "UITextField"; placeholder = "Enter phone number"; ObjectID = "pJc-sL-qQb"; */
+"pJc-sL-qQb.placeholder" = "Enter phone number";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uz9-KS-oJa"; */
+"uz9-KS-oJa.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "View Contacts"; ObjectID = "w84-ES-mev"; */
+"w84-ES-mev.title" = "View Contacts";
