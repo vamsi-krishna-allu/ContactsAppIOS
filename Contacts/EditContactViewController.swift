@@ -14,6 +14,7 @@ class EditContactViewController: UIViewController {
     @IBOutlet var lastName: UITextField!
     @IBOutlet var phoneNumber: UITextField!
     
+    @IBOutlet var contactTitle: UILabel!
     @IBOutlet var cancelButton: UIBarButtonItem!
     @IBOutlet var doneButton: UIBarButtonItem!
     
@@ -31,7 +32,10 @@ class EditContactViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad();
-        deleteButton.tintColor = UIColor.red;
+        contactTitle.layer.cornerRadius = 75
+        contactTitle.textAlignment = NSTextAlignment.center
+        contactTitle.layer.backgroundColor = UIColor.darkGray.cgColor
+        contactTitle.text = sharedContact.firstName.prefix(1).uppercased()
     }
     
     @IBAction func cancelButtonClickListener(_ sender: UIBarButtonItem) {

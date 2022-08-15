@@ -9,17 +9,15 @@ import UIKit
 
 class ContactViewController: UIViewController {
 
-    @IBOutlet var firstName: UITextField!
-    @IBOutlet var lastName: UITextField!
-    @IBOutlet var phoneNumber: UITextField!
     
+    @IBOutlet var phoneNumber: UILabel!
+    @IBOutlet var contactName: UILabel!
     @IBOutlet var contactTitle: UILabel!
     
     var sharedContact: Contact = Contact(contactId: -1, firstName: "",lastName: "",phoneNumber: "");
     
     override func viewWillAppear(_ animated: Bool) {
-        firstName.text = sharedContact.firstName;
-        lastName.text = sharedContact.lastName;
+        contactName.text = "\(sharedContact.firstName) \(sharedContact.lastName)";
         phoneNumber.text = sharedContact.phoneNumber;
     }
     
@@ -34,9 +32,9 @@ class ContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactTitle.layer.cornerRadius = 50
+        contactTitle.layer.cornerRadius = 75
         contactTitle.textAlignment = NSTextAlignment.center
-        contactTitle.layer.backgroundColor = UIColor.lightGray.cgColor
+        contactTitle.layer.backgroundColor = UIColor.darkGray.cgColor
         contactTitle.text = sharedContact.firstName.prefix(1).uppercased()
     }
 
