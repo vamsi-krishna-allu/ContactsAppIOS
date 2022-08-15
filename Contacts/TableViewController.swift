@@ -86,7 +86,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].letter
+        return sections[section].letter.uppercased()
     }
 
     
