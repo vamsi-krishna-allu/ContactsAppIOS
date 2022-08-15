@@ -13,6 +13,8 @@ class ContactViewController: UIViewController {
     @IBOutlet var lastName: UITextField!
     @IBOutlet var phoneNumber: UITextField!
     
+    @IBOutlet var contactTitle: UILabel!
+    
     var sharedContact: Contact = Contact(contactId: -1, firstName: "",lastName: "",phoneNumber: "");
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +34,10 @@ class ContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contactTitle.layer.cornerRadius = 50
+        contactTitle.textAlignment = NSTextAlignment.center
+        contactTitle.layer.backgroundColor = UIColor.lightGray.cgColor
+        contactTitle.text = sharedContact.firstName.prefix(1).uppercased()
     }
 
 }

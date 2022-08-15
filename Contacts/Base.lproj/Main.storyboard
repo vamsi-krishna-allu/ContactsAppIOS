@@ -31,6 +31,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zrk-4q-IOh">
+                                <rect key="frame" x="154" y="181" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gQM-uj-Jt9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -54,6 +61,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contactTitle" destination="Zrk-4q-IOh" id="iYP-gB-lho"/>
                         <outlet property="firstName" destination="RzW-7l-Zf7" id="h6r-E5-X9X"/>
                         <outlet property="lastName" destination="Z72-8a-UvW" id="r8k-UV-VbX"/>
                         <outlet property="phoneNumber" destination="Grb-BR-Kob" id="bJT-p4-Bfd"/>
