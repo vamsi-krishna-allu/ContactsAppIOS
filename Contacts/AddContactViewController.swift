@@ -22,18 +22,23 @@ class AddContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // added selector that performs operation when keyboard is shown
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        // added selector that performs operation when keyboard is hidden
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        // below lines closes keyboard when user clicks on done
         contactFirstName.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
         contactLastName.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
         contactPhoneNumber.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
         
+        // below lines supports localization such thatit takes value based on language
         contactFirstName.placeholder = NSLocalizedString("firstNamePlaceholder", comment: "place holder for first name")
         contactLastName.placeholder = NSLocalizedString("lastNamePlaceholder", comment: "place holder for last name")
         contactPhoneNumber.placeholder = NSLocalizedString("phoneNumberPlaceholder", comment: "place holder for phone number")
         self.title = NSLocalizedString("AddContactTitle", comment: "Add Contact Title");
         
+        // Added custom animation for the textfields
         CustomAnimation.animateTextField(textField: contactFirstName);
         CustomAnimation.animateTextField(textField: contactLastName);
         CustomAnimation.animateTextField(textField: contactPhoneNumber);
@@ -43,8 +48,11 @@ class AddContactViewController: UIViewController {
         self.navigationController?.popViewController(animated: true);
     }
     
+    /**
+     On complete adding, data is saved and page is navigated back to view contacts screen with updated data
+     */
     @IBAction func doneButtonCLickListener(_ sender: UIBarButtonItem) {
-        
+        // Verifies whether the entered data is vaid or not
         let isValid = ValidationAlert.validateContact(firstName: contactFirstName, lastName: contactLastName, phoneNumber: contactPhoneNumber, view: self);
         
         if(!isValid){
@@ -65,6 +73,10 @@ class AddContactViewController: UIViewController {
         self.navigationController?.popViewController(animated: true);
     }
     
+    /**
+     When keyboard is shown UI needs to scroll above such that textfields doesnot overlap with keyboard
+     Using keybaord height to known the scroll amount required
+     */
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -73,6 +85,9 @@ class AddContactViewController: UIViewController {
         }
     }
 
+    /**
+     When keyboard is hidden UI needs to scroll back to original position
+     */
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0

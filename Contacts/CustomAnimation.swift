@@ -10,6 +10,11 @@ import UIKit
 
 class CustomAnimation {
     
+    /**
+     To animate all the textfields
+     It moves the textfield by 100 units up and 100 units down and places back to their original position
+     It also sets the placeholder color to system yellow and color changes to gray as soon as the user enters text
+     */
     static func animateTextField(textField: UITextField){
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 1
@@ -23,6 +28,10 @@ class CustomAnimation {
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemYellow])
     }
     
+    /**
+     To animate all the buttons
+     It moves the buttons by 100 units up and 100 units down and places back to their original position
+     */
     static func animateButton(button: UIButton){
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 1
@@ -33,6 +42,10 @@ class CustomAnimation {
         button.layer.add(animation, forKey: "position")
     }
     
+    /**
+     To animate all the label
+     It moves the label by 100 units up and 100 units down and places back to their original position
+     */
     static func animateLabels(label: UILabel){
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 1
