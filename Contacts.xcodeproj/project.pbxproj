@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A24F0BF28AD1ED1001D9B96 /* ValidationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24F0BE28AD1ED1001D9B96 /* ValidationAlert.swift */; };
+		7A24F0C128AD261D001D9B96 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24F0C028AD261D001D9B96 /* CustomAnimation.swift */; };
 		7A57F41A2878912A0052E892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57F4192878912A0052E892 /* AppDelegate.swift */; };
 		7A57F41C2878912A0052E892 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57F41B2878912A0052E892 /* SceneDelegate.swift */; };
 		7A57F4212878912A0052E892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A57F41F2878912A0052E892 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		7A24F0BE28AD1ED1001D9B96 /* ValidationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlert.swift; sourceTree = "<group>"; };
+		7A24F0C028AD261D001D9B96 /* CustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimation.swift; sourceTree = "<group>"; };
 		7A57F4162878912A0052E892 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A57F4192878912A0052E892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A57F41B2878912A0052E892 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				7A73CDD428A80EBA0097249C /* ContactList.swift */,
 				7A73CDDB28AA8A040097249C /* Localizable.strings */,
 				7A24F0BE28AD1ED1001D9B96 /* ValidationAlert.swift */,
+				7A24F0C028AD261D001D9B96 /* CustomAnimation.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A24F0C128AD261D001D9B96 /* CustomAnimation.swift in Sources */,
 				7A57F41A2878912A0052E892 /* AppDelegate.swift in Sources */,
 				7A73CD782883E1670097249C /* ContactViewController.swift in Sources */,
 				7A73CD7E288DA47D0097249C /* AddContactViewController.swift in Sources */,

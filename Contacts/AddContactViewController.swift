@@ -33,6 +33,10 @@ class AddContactViewController: UIViewController {
         contactLastName.placeholder = NSLocalizedString("lastNamePlaceholder", comment: "place holder for last name")
         contactPhoneNumber.placeholder = NSLocalizedString("phoneNumberPlaceholder", comment: "place holder for phone number")
         self.title = NSLocalizedString("AddContactTitle", comment: "Add Contact Title");
+        
+        CustomAnimation.animateTextField(textField: contactFirstName);
+        CustomAnimation.animateTextField(textField: contactLastName);
+        CustomAnimation.animateTextField(textField: contactPhoneNumber);
     }
     
     @IBAction func cancelButtonClickListener(_ sender: UIBarButtonItem) {

@@ -45,6 +45,12 @@ class EditContactViewController: UIViewController {
         contactTitle.text = sharedContact.firstName.prefix(1).uppercased()
         
         deleteButton.setTitle(NSLocalizedString("DeleteButton", comment: "Delete Contact"), for: .normal)
+        
+        CustomAnimation.animateTextField(textField: firstName);
+        CustomAnimation.animateTextField(textField: lastName);
+        CustomAnimation.animateTextField(textField: phoneNumber);
+        CustomAnimation.animateLabels(label: contactTitle);
+        CustomAnimation.animateButton(button: deleteButton);
     }
     
     @IBAction func cancelButtonClickListener(_ sender: UIBarButtonItem) {

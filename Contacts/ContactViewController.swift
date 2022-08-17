@@ -36,6 +36,10 @@ class ContactViewController: UIViewController {
         contactTitle.textAlignment = NSTextAlignment.center
         contactTitle.layer.backgroundColor = UIColor.darkGray.cgColor
         contactTitle.text = sharedContact.firstName.prefix(1).uppercased()
+        
+        CustomAnimation.animateLabels(label: contactTitle);
+        CustomAnimation.animateLabels(label: phoneNumber);
+        CustomAnimation.animateLabels(label: contactName);
     }
 
 }
