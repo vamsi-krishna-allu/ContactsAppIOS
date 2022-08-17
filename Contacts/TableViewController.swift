@@ -27,8 +27,10 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        self.title = NSLocalizedString("ViewContactsTitle", comment: "View Contacts Title");
         self.searchBar.delegate = self;
         getContacts(filter: "");
+        
     }
     
     fileprivate func updateContactData() {

@@ -32,14 +32,25 @@ class EditContactViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad();
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        firstName.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
+        lastName.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
+        phoneNumber.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
+        
         contactTitle.layer.cornerRadius = 75
         contactTitle.textAlignment = NSTextAlignment.center
         contactTitle.layer.backgroundColor = UIColor.darkGray.cgColor
         contactTitle.text = sharedContact.firstName.prefix(1).uppercased()
+        
+        deleteButton.setTitle(NSLocalizedString("DeleteButton", comment: "Delete Contact"), for: .normal)
     }
     
     @IBAction func cancelButtonClickListener(_ sender: UIBarButtonItem) {
-        showActionSheet(message: "Are you sure you want to discard your changes", destructiveTitle: "Discard Changes", cancelTitle: "Keep Editing", destructiveAction: discardChanges);
+        showActionSheet(message: NSLocalizedString("AreYouSure", comment: "Are you sure you want to discard your changes"), destructiveTitle:  NSLocalizedString("discardChanges", comment: "discard changes")
+, cancelTitle:  NSLocalizedString("keepEditing", comment: "keep editing")
+, destructiveAction: discardChanges);
     }
     
     func discardChanges() -> Void {
@@ -47,6 +58,12 @@ class EditContactViewController: UIViewController {
     }
     
     @IBAction func doneButtonCLickListener(_ sender: UIBarButtonItem) {
+        let isValid = ValidationAlert.validateContact(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, view: self);
+        
+        if(!isValid){
+            return;
+        }
+        
         sharedContact.firstName = firstName.text!;
         sharedContact.lastName = lastName.text!;
         sharedContact.phoneNumber = phoneNumber.text!;
@@ -65,7 +82,7 @@ class EditContactViewController: UIViewController {
     
     
     @IBAction func onDeleteContact(_ sender: UIButton) {
-        showActionSheet(message: "",destructiveTitle: "Delete Contact", cancelTitle: "Cancel", destructiveAction: deleteContact);
+        showActionSheet(message: "",destructiveTitle: NSLocalizedString("DeleteButton", comment: "Delete Contact"), cancelTitle: NSLocalizedString("cancel", comment: "Cancel"), destructiveAction: deleteContact);
     }
     
     func deleteContact() -> Void {
@@ -85,6 +102,20 @@ class EditContactViewController: UIViewController {
         alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel , handler:{_ in }))
 
         self.present(alert, animated: true, completion: {})
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
 
 }

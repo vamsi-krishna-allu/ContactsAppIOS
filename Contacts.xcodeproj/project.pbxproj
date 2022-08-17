@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A24F0BF28AD1ED1001D9B96 /* ValidationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24F0BE28AD1ED1001D9B96 /* ValidationAlert.swift */; };
 		7A57F41A2878912A0052E892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57F4192878912A0052E892 /* AppDelegate.swift */; };
 		7A57F41C2878912A0052E892 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A57F41B2878912A0052E892 /* SceneDelegate.swift */; };
 		7A57F4212878912A0052E892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A57F41F2878912A0052E892 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		7A73CDD128A768560097249C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7A73CDD028A768560097249C /* FirebaseStorage */; };
 		7A73CDD328A76BC90097249C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A73CDD228A76BC90097249C /* GoogleService-Info.plist */; };
 		7A73CDD528A80EBA0097249C /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73CDD428A80EBA0097249C /* ContactList.swift */; };
+		7A73CDD928AA8A040097249C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A73CDDB28AA8A040097249C /* Localizable.strings */; };
 		7A87136E28812ABB00D5D966 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87136D28812ABB00D5D966 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A24F0BE28AD1ED1001D9B96 /* ValidationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlert.swift; sourceTree = "<group>"; };
 		7A57F4162878912A0052E892 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A57F4192878912A0052E892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A57F41B2878912A0052E892 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +70,9 @@
 		7A73CD7F28912CA80097249C /* ContactApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactApiModel.swift; sourceTree = "<group>"; };
 		7A73CDD228A76BC90097249C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A73CDD428A80EBA0097249C /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
+		7A73CDD628AA894D0097249C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		7A73CDDC28AA8A060097249C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7A73CDDD28AA96B60097249C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A87136D28812ABB00D5D966 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +143,8 @@
 				7A73CD7D288DA47D0097249C /* AddContactViewController.swift */,
 				7A73CD7F28912CA80097249C /* ContactApiModel.swift */,
 				7A73CDD428A80EBA0097249C /* ContactList.swift */,
+				7A73CDDB28AA8A040097249C /* Localizable.strings */,
+				7A24F0BE28AD1ED1001D9B96 /* ValidationAlert.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -251,6 +259,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 7A57F40D2878912A0052E892;
 			packageReferences = (
@@ -272,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A73CDD928AA8A040097249C /* Localizable.strings in Resources */,
 				7A57F4262878912C0052E892 /* LaunchScreen.storyboard in Resources */,
 				7A73CDD328A76BC90097249C /* GoogleService-Info.plist in Resources */,
 				7A57F4232878912C0052E892 /* Assets.xcassets in Resources */,
@@ -307,6 +317,7 @@
 				7A73CD7A2883E3290097249C /* contact.swift in Sources */,
 				7A87136E28812ABB00D5D966 /* TableViewController.swift in Sources */,
 				7A73CDD528A80EBA0097249C /* ContactList.swift in Sources */,
+				7A24F0BF28AD1ED1001D9B96 /* ValidationAlert.swift in Sources */,
 				7A73CD7C2884027B0097249C /* EditContactViewController.swift in Sources */,
 				7A73CD8028912CA80097249C /* ContactApiModel.swift in Sources */,
 			);
@@ -349,6 +360,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7A57F4202878912A0052E892 /* Base */,
+				7A73CDD628AA894D0097249C /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -361,6 +373,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		7A73CDDB28AA8A040097249C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A73CDDC28AA8A060097249C /* fr */,
+				7A73CDDD28AA96B60097249C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -368,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -417,6 +439,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -428,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -471,6 +495,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
