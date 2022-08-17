@@ -32,6 +32,13 @@ class EditContactViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad();
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        firstName.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
+        lastName.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
+        phoneNumber.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
+        
         contactTitle.layer.cornerRadius = 75
         contactTitle.textAlignment = NSTextAlignment.center
         contactTitle.layer.backgroundColor = UIColor.darkGray.cgColor
@@ -51,6 +58,12 @@ class EditContactViewController: UIViewController {
     }
     
     @IBAction func doneButtonCLickListener(_ sender: UIBarButtonItem) {
+        let isValid = ValidationAlert.validateContact(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, view: self);
+        
+        if(!isValid){
+            return;
+        }
+        
         sharedContact.firstName = firstName.text!;
         sharedContact.lastName = lastName.text!;
         sharedContact.phoneNumber = phoneNumber.text!;
@@ -89,6 +102,20 @@ class EditContactViewController: UIViewController {
         alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel , handler:{_ in }))
 
         self.present(alert, animated: true, completion: {})
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
 
 }
