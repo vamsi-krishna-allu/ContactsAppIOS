@@ -10,6 +10,9 @@ import UIKit
 
 class ValidationAlert {
     
+    /**
+     Resusable function to validate the contacts on different pages
+     */
     static func validateContact(firstName: UITextField, lastName: UITextField, phoneNumber: UITextField,
                          view: UIViewController) -> Bool {
         if(firstName.text == nil || firstName.text!.isEmpty){
@@ -39,7 +42,9 @@ class ValidationAlert {
         return true;
     }
     
-    
+    /**
+     Resuable show alert method to show the alert with custom message
+     */
     static func showAlert(message: String, view: UIViewController){
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
         

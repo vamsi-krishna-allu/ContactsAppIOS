@@ -8,6 +8,9 @@
 import Foundation
 import Firebase
 
+/**
+ Model Class to use contact details across the app
+ */
 class Contact {
     var contactId: Int64;
     var firstName: String;

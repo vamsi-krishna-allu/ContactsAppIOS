@@ -33,6 +33,10 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    /**
+     Below method is used to update the table view with the data retrieved from firebase
+     Sections are created based on first letter and the data are sorted and grouped into that sections
+     */
     fileprivate func updateContactData() {
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
@@ -43,6 +47,10 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.reloadData()
     }
     
+    /**
+     Below method fetches the contact from firebase and update the contact list
+     filter is passed as parameter to support search functionality
+     */
     func getContacts(filter: String){
         ref.observe(.value, with: { snapshot in
             self.contactsList = [];
@@ -63,17 +71,23 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         })
     }
 
-    // MARK: - Table view data source
-
+    /**
+     Below method defines the section count
+     */
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
 
+    /**
+     Below method is to set the count of the rows in each section
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].names.count
     }
 
-    
+    /**
+     Below method is used to updated the value for each cell with first name and last name
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellID = "title"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as UITableViewCell
@@ -83,6 +97,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    /**
+     Below function is to set the title for the sections
+     */
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return sections.map{$0.letter}
     }
@@ -93,11 +110,12 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /**
+     In a storyboard-based application, you will often want to do a little preparation before navigation
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // Pass the selected object to the ContactViewController.
         if  segue.identifier == "showContactsSeque",
             let destination = segue.destination as? ContactViewController,
             let indexPath = tableView.indexPathForSelectedRow
@@ -107,10 +125,16 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    /**
+     This method helps to deselct row after processed so that when we select new row data is updated with new row on selection
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true);
     }
     
+    /**
+     Function to trigger on changes in the search bar
+     */
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         getContacts(filter: searchText)
     }
